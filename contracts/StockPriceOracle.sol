@@ -30,7 +30,7 @@ contract StockPriceOracle is Ownable {
      @param _newPrice has to be sent with the right number of decimals even if their values are 0
      @param _lastUpdatedTimestamp is optionnal but hihgly recommanded
      */
-    function updatedPrice(
+    function setUpdatedPrice(
         uint256 _newPrice,
         uint256 _lastUpdatedTimestamp
     ) external onlyOwner {
