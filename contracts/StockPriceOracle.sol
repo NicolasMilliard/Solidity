@@ -10,13 +10,13 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * @notice Allow an external source to update the price of a stock
  */
 contract StockPriceOracle is Ownable {
-    string symbol;
+    string public symbol;
     /**
      @dev stockPrice is stored as an integer with its decimals.
      */
     uint256 stockPrice;
-    uint256 nbDecimals;
     uint256 lastUpdatedTimestamp;
+    uint256 public nbDecimals;
 
     event StockPriceUpdated(uint256 stockPrice, uint256 lastUpdatedTimestamp);
 

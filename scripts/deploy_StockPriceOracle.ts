@@ -7,8 +7,8 @@ async function main() {
 
   console.log("Owner of StockPriceOracle:", deployer.address);
 
-  const symbol = "AAPL"; // Replace with the desired symbol
-  const nbDecimals = 2; // Replace with the number of decimals you want
+  const symbol = "ETH"; // Replace with the desired symbol
+  const nbDecimals = 16; // Replace with the number of decimals you want
 
   // Deploy StockPriceOracle contract
   const StockPriceOracleFactory = await hre.ethers.getContractFactory("StockPriceOracle");

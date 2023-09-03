@@ -8,8 +8,8 @@ describe("StockPriceOracle", () => {
   let externalSource: Signer;
   let stockPriceOracle: StockPriceOracle;
 
-  const symbol = "AAPL";
-  const nbDecimals = 2;
+  const symbol = "ETH";
+  const nbDecimals = 16;
 
   beforeEach(async () => {
     [owner, externalSource] = await hre.ethers.getSigners();
@@ -21,6 +21,8 @@ describe("StockPriceOracle", () => {
 
   it("should deploy with the correct owner and initial values", async () => {
     expect(await stockPriceOracle.owner()).to.equal(await owner.getAddress());
+    expect(await stockPriceOracle.symbol()).to.equal("ETH");
+    expect(await stockPriceOracle.nbDecimals()).to.equal(16);
   });
 
   it("should allow the owner to update the stock price", async () => {
